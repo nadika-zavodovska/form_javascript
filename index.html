@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form with JavaScript</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <form id="form">
+      <label>
+        Name and Surname:
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Tomas Peterson"
+          autocomplete="Tomas Peterson"
+          required
+          autofocus
+        />
+      </label>
+
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="tomas@peterson.com"
+          autocomplete="tomas@peterson.com"
+          required
+        />
+      </label>
+
+      <label>
+        Age:
+        <input type="number" name="age" autocomplete="27" />
+      </label>
+      <label>
+        Favorite programming language:
+        <select name="programming-language" required>
+          <option value="javascript" selected>JavaScript</option>
+          <option value="php">PHP</option>
+          <option value="c">C</option>
+          <option value="assembly">Assembly</option>
+        </select>
+      </label>
+      <label>
+        I've worked as a freelancer
+        <input type="checkbox" name="freelance-experience" value="1" />
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
