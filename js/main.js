@@ -1,8 +1,24 @@
-function handleFormSubmit(event){
-    
+function showForm(formNode) {
+  return new FormData(formNode);
 }
 
+function handleFormSubmit(evt) {
+  evt.preventDefault();
+  showForm(form);
+  const data = Array.from(showForm(form).entries());
 
-const form = document.querySelector('#form');
+  Email.send({
+    Host: "smtp.elasticemail.com",
+    Username: "your username",
+    Password: "your password",
+    To: "youremail@gmail.com",
+    From: "youremail@gmail.com",
+    Subject: "Email from $your website",
+    Body: `Your name: ${data[0][1]}
+    <br />
+    Your age: ${data[2][1]}`,
+  }).then((message) => alert(message));
+}
 
-form.addEventListener('submit', handleFormSubmit);
+const form = document.getElementById("form");
+form.addEventListener("submit", handleFormSubmit);
